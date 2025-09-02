@@ -40,6 +40,10 @@ INSTALLED_APPS = [
 ]
 
 INSTALLED_APPS += [
+    'django_bootstrap5',
+]
+
+INSTALLED_APPS += [
     'home',
     'fornecedores',
 
