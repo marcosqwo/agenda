@@ -19,7 +19,7 @@ class ClienteView(ListView):
         buscar=self.request.GET.get('buscar')
         qs = super(ClienteView,self).get_queryset()
         if buscar:
-             qs.filter(nome__icontains=buscar)
+           qs=qs.filter(nome__icontains=buscar)
         if qs.count()>0:
             paginator = Paginator(qs,1)
             listagem = paginator.get_page(self.request.GET.get('page'))

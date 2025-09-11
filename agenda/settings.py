@@ -48,7 +48,9 @@ INSTALLED_APPS += [
     'home',
     'fornecedores',
     'clientes',
-    'produtos'
+    'produtos',
+    'funcionarios',
+    'servicos'
 
 ]
 

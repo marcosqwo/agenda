@@ -2,7 +2,7 @@ from django.contrib.messages.views import SuccessMessageMixin
 from django.core.paginator import Paginator
 from django.urls import reverse_lazy
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView
-from pyexpat.errors import messages
+from django.contrib import messages
 from produtos.forms import ProdutoModelForm
 from produtos.models import Produto
 
@@ -16,7 +16,7 @@ class ProdutosView(ListView):
         buscar=self.request.GET.get('buscar')
         qs = super(ProdutosView,self).get_queryset()
         if buscar:
-            return qs.filter(nome__icontains=buscar)
+            qs=qs.filter(nome__icontains=buscar)
         if qs.count()>0:
             paginator = Paginator(qs,1)
             listagem = paginator.get_page(self.request.GET.get('page'))
