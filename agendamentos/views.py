@@ -165,3 +165,8 @@ class AgendamentoExibir(LoginRequiredMixin,DetailView):
         send_mail(subject='Lavacar - Serviço concluído',message=texto_email,from_email='cavalinmarcos@gmail.com',recipient_list=email,html_message=html_email,fail_silently=False)
 
         return redirect('agendamentos')
+
+
+class AgendamentoGraficoView(ListView):
+    model = Agendamento
+    template_name = 'grafico.html'

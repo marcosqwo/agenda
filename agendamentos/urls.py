@@ -1,7 +1,7 @@
 from django.urls import path
 
 from agendamentos.views import AgendamentosView, AgendamentoAddView, AgendamentoUpdateView, AgendamentoDeleteView, \
-    AgendamentoInLineEditView, AgendamentoExibir
+    AgendamentoInLineEditView, AgendamentoExibir, AgendamentoGraficoView
 
 urlpatterns = [
     path('agendamentos',AgendamentosView.as_view(), name='agendamentos'),
@@ -10,5 +10,6 @@ urlpatterns = [
     path('<int:pk>/agendamento/apagar',AgendamentoDeleteView.as_view(), name='agendamento_apagar'),
     path('<int:pk>/agendamento/inline',AgendamentoInLineEditView.as_view(), name='agendamento_inline'),
     path('<int:pk>/agendamento/exibir',AgendamentoExibir.as_view(), name='agendamento_exibir'),
+    path('agendamentos/grafico',AgendamentoGraficoView.as_view(), name='agendamento_grafico'),
 
 ]
