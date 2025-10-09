@@ -38,7 +38,7 @@ class ServicoAddView(PermissionRequiredMixin,SuccessMessageMixin,CreateView):
     permission_denied_message = 'Adicionar servico'
     model = Servico
     form_class = ServicoModelForm
-    template_name = 'Servico_form.html'
+    template_name = 'servico_form.html'
     success_url = reverse_lazy('servicos')
     success_message = 'Servico criado com sucesso!'
 
@@ -48,7 +48,7 @@ class ServicoUpdateView(PermissionRequiredMixin,SuccessMessageMixin,UpdateView):
     permission_denied_message = 'Editar servico'
     model = Servico
     form_class = ServicoModelForm
-    template_name = 'Servico_form.html'
+    template_name = 'servico_form.html'
     success_url = reverse_lazy('servicos')
     success_message = 'Servico atualizado com sucesso!'
 
@@ -56,7 +56,7 @@ class ServicoDeleteView(PermissionRequiredMixin,SuccessMessageMixin,DeleteView):
     permission_required = 'servicos.delete_servico'
     permission_denied_message = 'Excluir servico'
     model = Servico
-    template_name = 'Servico_apagar.html'
+    template_name = 'servico_apagar.html'
     success_url = reverse_lazy('servicos')
     success_message = 'Fornecedor deletado com sucesso!'
 
